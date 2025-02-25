@@ -1,0 +1,14 @@
+#conversation {
+    height: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.user-message {
+    text-align: right;
+    color: blue;
+}
+.bot-message {
+    text-align: left;
+    color: green;
+}
