@@ -195,7 +195,7 @@ def process_with_groq(user_input, system_message):
                 
                 # Second API call with product information
                 final_response = groq_client.chat.completions.create(
-                    model="llama-3.1-8b-instant",
+                    model="qwen-2.5-32b",
                     messages=final_messages,
                     temperature=0.0,
                     max_tokens=1024
