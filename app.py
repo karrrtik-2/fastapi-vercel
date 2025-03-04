@@ -37,7 +37,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     response: str
-    processing_time: float
+    # Removed processing_time field
 
 def load_all_data():
     """Load all needed data into memory once"""
@@ -350,6 +350,7 @@ async def chat_endpoint(request: ChatRequest):
     try:
         system_message = read_system_message("keys.txt")
         response, processing_time = process_with_groq(request.message, system_message)
+        # Only returning the response without the processing_time
         return ChatResponse(response=response)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
