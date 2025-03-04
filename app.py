@@ -350,7 +350,7 @@ async def chat_endpoint(request: ChatRequest):
     try:
         system_message = read_system_message("keys.txt")
         response, processing_time = process_with_groq(request.message, system_message)
-        return ChatResponse(response=response, processing_time=processing_time)
+        return ChatResponse(response=response)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
